@@ -37,5 +37,29 @@ namespace csharp_biblioteca
             Rent newRent = new Rent(user, DateTime.Now, DateTime.Now.AddDays(numberOfDays));
             rents.Add(newRent);
         }
+
+        public void getAllRents()
+        {
+            foreach (Rent rent in rents)
+            {
+                Console.WriteLine(rent.getRentDetails());
+            }
+        }
+
+        public void getAllUsers()
+        {
+            foreach (User user in users)
+            {
+                Console.WriteLine(user.getUserData());
+            }
+        }
+
+        public void getAllDocuments()
+        {
+            foreach (Document document in documents)
+            {
+                Console.WriteLine(document.getDocumentData());
+            }
+        }
     }
 }

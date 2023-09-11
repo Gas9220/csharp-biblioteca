@@ -42,8 +42,45 @@ Console.WriteLine("Thank you for your registration!");
 Console.WriteLine(newUser.getUserData());
 
 
-Document[] matches = Utils.PerformSearch(bestLibraryEver);
-Utils.PerformRent(bestLibraryEver, matches, newUser);
+if (newUser.UserRole == Role.user)
+{
+    Document[] matches = Utils.PerformSearch(bestLibraryEver);
+    Utils.PerformRent(bestLibraryEver, matches, newUser);
+}
+else
+{
+    Console.WriteLine("Choose an action:");
+    Console.WriteLine("1 See all rents");
+    Console.WriteLine("2 See all users");
+    Console.WriteLine("3 See all documents");
+    Console.WriteLine("4 Search for a document");
+
+    string userSelection = Console.ReadLine();
+
+    switch (userSelection)
+    {
+        case "1":
+            bestLibraryEver.getAllRents();
+            break;
+        case "2":
+            bestLibraryEver.getAllUsers();
+            break;
+        case "3":
+            bestLibraryEver.getAllDocuments();
+            break;
+        case "4":
+            Document[] matches = Utils.PerformSearch(bestLibraryEver);
+            Utils.PerformRent(bestLibraryEver, matches, newUser);
+            break;
+        default:
+            Console.WriteLine("Choose an action:");
+            Console.WriteLine("1 See all rents");
+            Console.WriteLine("2 See all users");
+            Console.WriteLine("3 See all documents");
+            Console.WriteLine("4 Search for a document");
+            break;
+    }
+}
 
 
 
