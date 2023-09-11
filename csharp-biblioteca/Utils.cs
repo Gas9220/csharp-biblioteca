@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharp_biblioteca
 {
-    internal class Utils
+    sealed class Utils
     {
         static public Document[] PerformSearch(Library library)
         {

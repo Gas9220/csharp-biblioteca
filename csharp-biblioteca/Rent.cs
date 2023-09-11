@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharp_biblioteca
 {
-    internal class Rent
+    sealed class Rent
     {
         public User User { get; private set; }
         public DateTime StartDate {  get; private set; }

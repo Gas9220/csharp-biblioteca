@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharp_biblioteca
 {
-    internal class Store
+    sealed class Store
     {
 
         public static List<Document> FillStore()

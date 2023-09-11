@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharp_biblioteca
 {
-    internal class Author
+    sealed class Author
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

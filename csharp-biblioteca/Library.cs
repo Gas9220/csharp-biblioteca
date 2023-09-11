@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharp_biblioteca
 {
-    internal class Library
+    sealed class Library
     {
         public List<User> users = new List<User>();
         public List<Document> documents = new List<Document>();

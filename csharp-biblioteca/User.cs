@@ -12,7 +12,7 @@ namespace csharp_biblioteca
         admin,
         user
     }
-    internal class User
+    sealed class User
     {
 
 
