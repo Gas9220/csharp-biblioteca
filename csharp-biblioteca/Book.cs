@@ -13,5 +13,17 @@ namespace csharp_biblioteca
         {
             this.NumberOfPages = numberOfPages;
         }
+
+        public override string getDocumentData()
+        {
+            return ($@"
+                    Title: {Title}
+                    Year: {Year}
+                    Subject: {Subject}
+                    Shelf: {Shelf}
+                    Author: {Author.FirstName} {Author.LastName}
+                    Number of pages: {NumberOfPages}
+                   ");
+        }
     }
 }

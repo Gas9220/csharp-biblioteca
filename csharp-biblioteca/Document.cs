@@ -35,5 +35,16 @@ namespace csharp_biblioteca
             Shelf = shelf;
             Author = author;
         }
+
+        public virtual string getDocumentData()
+        {
+            return ($@"
+                    Title: {Title}
+                    Year: {Year}
+                    Subject: {Subject}
+                    Shelf: {Shelf}
+                    Author: {Author.FirstName} {Author.LastName}
+                   ");
+        }
     }
 }

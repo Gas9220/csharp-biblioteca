@@ -93,6 +93,24 @@ bestLibraryEver.users.Add(newUser);
 Console.WriteLine("Thank you for your registration!");
 Console.WriteLine(newUser.getUserData());
 
+Console.Write("Search for a document: ");
+string documentToFind = Console.ReadLine();
+
+Document? possibleMatch = bestLibraryEver.SearchDocument(documentToFind);
+
+if (possibleMatch != null)
+{
+    Console.WriteLine("Here is the result...");
+    Console.WriteLine(possibleMatch.getDocumentData());
+} else
+{
+    Console.WriteLine("No results, try again...");
+    Console.WriteLine("Search for a document: ");
+    documentToFind = Console.ReadLine();
+
+    possibleMatch = bestLibraryEver.SearchDocument(documentToFind);
+
+}
 
 
 
