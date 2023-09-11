@@ -68,6 +68,10 @@ Console.WriteLine($"Welcome to the best library of the world, we have {bestLibra
 Console.WriteLine("Before using our system you must register a valid user");
 
 // User registration
+Console.Write("What's your role: ");
+string roleInput = Console.ReadLine();
+Role? role = roleInput.ToLower() == "admin" ? Role.admin : Role.user;
+
 Console.Write("Inser your first name: ");
 string? firstName = Console.ReadLine();
 
@@ -87,7 +91,9 @@ User newUser = new User(firstName ?? "First name",
                         lastName ?? "Last name",
                         email ?? "test@me.com",
                         password ?? "12345678",
-                        phoneNumber ?? "+39333121212");
+                        phoneNumber ?? "+39333121212",
+                        role ?? Role.user
+                        );
 
 bestLibraryEver.users.Add(newUser);
 
