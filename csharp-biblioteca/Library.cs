@@ -10,6 +10,8 @@ namespace csharp_biblioteca
     {
         public List<User> users = new List<User>();
         public List<Document> documents = new List<Document>();
+        public List<Rent> rents = new List<Rent>();
+
 
         public Document[] SearchDocument(string name)
         {
@@ -24,6 +26,12 @@ namespace csharp_biblioteca
             }
 
             return results.ToArray();
+        }
+
+        public void RentBook(User user, int numberOfDays)
+        {
+            Rent newRent = new Rent(user, DateTime.Now, DateTime.Now.AddDays(numberOfDays));
+            rents.Add(newRent);
         }
     }
 }
