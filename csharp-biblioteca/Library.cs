@@ -12,6 +12,10 @@ namespace csharp_biblioteca
         public List<Document> documents = new List<Document>();
         public List<Rent> rents = new List<Rent>();
 
+        public Library() {
+            documents = Store.FillStore();
+        }
+
 
         public Document[] SearchDocument(string name)
         {
