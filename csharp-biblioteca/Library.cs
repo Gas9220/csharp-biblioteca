@@ -11,18 +11,19 @@ namespace csharp_biblioteca
         public List<User> users = new List<User>();
         public List<Document> documents = new List<Document>();
 
-        public Document? SearchDocument(string name)
+        public Document[] SearchDocument(string name)
         {
+            List<Document> results = new List<Document>();
 
             foreach (Document document in documents)
             {
                 if (document.Title.ToLower().Contains(name.ToLower()))
                 {
-                    return document;
+                    results.Add(document);
                 }
             }
 
-            return null;
+            return results.ToArray();
         }
     }
 }

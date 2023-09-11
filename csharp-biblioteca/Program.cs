@@ -77,7 +77,7 @@ Console.Write("Inser your email: ");
 string? email = Console.ReadLine();
 
 Console.Write("Inser your password: ");
-string? password= Console.ReadLine();
+string? password = Console.ReadLine();
 
 Console.Write("Inser your phone number: ");
 string? phoneNumber = Console.ReadLine();
@@ -96,20 +96,22 @@ Console.WriteLine(newUser.getUserData());
 Console.Write("Search for a document: ");
 string documentToFind = Console.ReadLine();
 
-Document? possibleMatch = bestLibraryEver.SearchDocument(documentToFind);
+Document[] possibleMatches = bestLibraryEver.SearchDocument(documentToFind);
 
-if (possibleMatch != null)
-{
-    Console.WriteLine("Here is the result...");
-    Console.WriteLine(possibleMatch.getDocumentData());
-} else
+while (possibleMatches.Length <= 0)
 {
     Console.WriteLine("No results, try again...");
-    Console.WriteLine("Search for a document: ");
+    Console.Write("Search for a document: ");
     documentToFind = Console.ReadLine();
 
-    possibleMatch = bestLibraryEver.SearchDocument(documentToFind);
+    possibleMatches = bestLibraryEver.SearchDocument(documentToFind);
+}
 
+Console.WriteLine("Here is the result...");
+
+foreach (Document possibleMatch in possibleMatches)
+{
+    Console.WriteLine(possibleMatch.getDocumentData());
 }
 
 
