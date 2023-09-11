@@ -13,7 +13,9 @@ namespace csharp_biblioteca
         history,
         computerScience,
         english,
-        geography
+        geography,
+        fantasy,
+        Comics
     }
     internal class Document
     {
