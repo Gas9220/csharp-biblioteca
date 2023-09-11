@@ -17,5 +17,14 @@ namespace csharp_biblioteca
             this.StartDate = startDate;
             this.EndDate = endDate;
         }
+
+        public string getRentDetails()
+        {
+                return $@"
+                    User: {User.FirstName} {User.LastName}
+                    Start date: {StartDate.ToString()}
+                    End date: {EndDate.ToString()}
+                   ";
+        }
     }
 }

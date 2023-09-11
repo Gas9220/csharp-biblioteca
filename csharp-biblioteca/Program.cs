@@ -1,4 +1,5 @@
 ﻿using csharp_biblioteca;
+using System.Reflection;
 
 // New library
 Library bestLibraryEver = new Library();
@@ -109,10 +110,17 @@ while (possibleMatches.Length <= 0)
 
 Console.WriteLine("Here is the result...");
 
-foreach (Document possibleMatch in possibleMatches)
+foreach (var (possibleMatch, i) in possibleMatches.Select((value, i) => (value, i)))
 {
-    Console.WriteLine(possibleMatch.getDocumentData());
+    Console.WriteLine($"[{i}]{possibleMatch.getDocumentData()}");
 }
 
+Console.Write("To rent a document, insert the result number (example 0 or 1):");
+int userSelection = Convert.ToInt32(Console.ReadLine());
+Document documentToRent = possibleMatches[userSelection];
 
+bestLibraryEver.RentDocument(newUser, 5);
+
+Console.WriteLine($"Congratulation, you have rent: {documentToRent.getDocumentData()}");
+Console.WriteLine($"Here is the recap of your rent: {bestLibraryEver.rents.Last().getRentDetails()}");
 
