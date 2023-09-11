@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,23 @@ namespace csharp_biblioteca
             this.Email = email;
             this.Password = password;
             this.PhoneNumber = phoneNumber;
+        }
+
+        public string getUserData()
+        {
+            return ($@"Here is a recap of your data:
+                    First name: {FirstName}
+                    Last name: {LastName}
+                    Email: {Email}
+                    Password: {hidePassword()}
+                    Phone number: {PhoneNumber}
+                   ");
+        }
+
+        private string hidePassword()
+        {
+            string hiddenPassword = new String('x', Password.Length);
+            return hiddenPassword;
         }
     }
 }
