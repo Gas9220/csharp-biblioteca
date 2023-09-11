@@ -9,7 +9,7 @@ Console.WriteLine($"Welcome to the best library of the world, we have {bestLibra
 Console.WriteLine("Before using our system you must register a valid user");
 
 // User registration
-Console.Write("What's your role: ");
+Console.Write("What's your role(admin or user: ");
 string roleInput = Console.ReadLine();
 Role? role = roleInput.ToLower() == "admin" ? Role.admin : Role.user;
 
