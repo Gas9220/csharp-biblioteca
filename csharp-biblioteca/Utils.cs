@@ -41,7 +41,7 @@ namespace csharp_biblioteca
             int userSelection = Convert.ToInt32(Console.ReadLine());
             Document documentToRent = documents[userSelection];
 
-            library.RentDocument(user, 5);
+            library.RentDocument(documentToRent, user, 5);
 
             Console.WriteLine($"Congratulation, you have rent: {documentToRent.getDocumentData()}");
             Console.WriteLine($"Here is the recap of your rent: {library.rents.Last().getRentDetails()}");

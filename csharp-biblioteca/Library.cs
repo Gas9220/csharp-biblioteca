@@ -32,9 +32,9 @@ namespace csharp_biblioteca
             return results.ToArray();
         }
 
-        public void RentDocument(User user, int numberOfDays)
+        public void RentDocument(Document document, User user, int numberOfDays)
         {
-            Rent newRent = new Rent(user, DateTime.Now, DateTime.Now.AddDays(numberOfDays));
+            Rent newRent = new Rent(document, user, DateTime.Now, DateTime.Now.AddDays(numberOfDays));
             rents.Add(newRent);
         }
 
